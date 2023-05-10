@@ -9,9 +9,12 @@ using bi = DevExpress.Persistent.BaseImpl;
 /// Summary description for XpoHelper
 /// </summary>
 public static class XpoHelper {
+
+    static readonly XPDictionary dict;
+
     static XpoHelper() {
-        XPDictionary dict = new ReflectionDictionary();
-        dict.GetDataStoreSchema(typeof(Person).Assembly);
+        dict = new ReflectionDictionary();
+        dict.GetDataStoreSchema(typeof(Person).Assembly, typeof(bi.AuditDataItemPersistent).Assembly, typeof(AuditDataItem).Assembly);
         AuditTrailService.Instance.SetXPDictionary(dict);
         AuditTrailService.Instance.AuditDataStore = new AuditDataStore<bi.AuditDataItemPersistent, bi.AuditedObjectWeakReference>();
     }
@@ -42,8 +45,6 @@ public static class XpoHelper {
 
     private static IDataLayer GetDataLayer() {
         XpoDefault.Session = null;
-        XPDictionary dict = new ReflectionDictionary();
-        dict.GetDataStoreSchema(typeof(Person).Assembly, typeof(bi.AuditDataItemPersistent).Assembly, typeof(AuditDataItem).Assembly);
         return new ThreadSafeDataLayer(dict, 
             XpoDefault.GetConnectionProvider(MSSqlConnectionProvider.GetConnectionString("(local)", "Q295139"),
             AutoCreateOption.DatabaseAndSchema));
