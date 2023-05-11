@@ -6,9 +6,9 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [PersistentClasses.cs](./CS/WebSite/App_Code/PersistentClasses.cs) (VB: [PersistentClasses.vb](./VB/WebSite/App_Code/PersistentClasses.vb))
-* [XpoHelper.cs](./CS/WebSite/App_Code/XpoHelper.cs) (VB: [XpoHelper.vb](./VB/WebSite/App_Code/XpoHelper.vb))
-* **[Default.aspx.cs](./CS/WebSite/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebSite/Default.aspx.vb))**
+* [PersistentClasses.cs](./CS/WebSite/App_Code/PersistentClasses.cs) 
+* [XpoHelper.cs](./CS/WebSite/App_Code/XpoHelper.cs) 
+* **[Default.aspx.cs](./CS/WebSite/Default.aspx.cs) **
 <!-- default file list end -->
 # How to reuse XAF Audit Trail module functionality in a non-XAF ASP.NET application
 
